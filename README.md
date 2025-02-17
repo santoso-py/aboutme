@@ -65,5 +65,5 @@ I may not be a **full-fledged coder**, but with AI and automation, I can **build
 
 🚀 **Let’s Connect!** 🚀  
 📧 **Email**: [snsn04@gmail.com]  
-🔗 **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/san-rui-68511020a/)  
-🐙 **GitHub**: [Your GitHub Profile](https://github.com/santoso-py)  
+🔗 **LinkedIn**: [sanrui](https://www.linkedin.com/in/san-rui-68511020a/)  
+🐙 **GitHub**: [sanrui](https://github.com/santoso-py)  
