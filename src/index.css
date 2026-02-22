@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --accent: 99 102 241;
+    --bg-primary: 255 255 255;
+    --text-primary: 10 10 12;
+    --font-main: 'Inter', sans-serif;
+  }
+
+  .dark {
+    --bg-primary: 5 5 7;
+    --text-primary: 250 250 250;
+  }
+
+  body {
+    @apply antialiased overflow-x-hidden transition-colors duration-700;
+    background-color: rgb(var(--bg-primary));
+    color: rgb(var(--text-primary));
+    font-family: var(--font-main);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Floating Grid System */
+.dot-grid {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: radial-gradient(rgb(var(--text-primary) / 0.1) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+}
+
+/* Anti-Gravity Elements */
+.floating-element {
+  @apply transition-transform duration-1000 ease-out;
+}
+
+.text-reveal {
+  overflow: hidden;
+  display: block;
+}
+
+/* Theme Accents */
+.theme-jp { --accent: 188 0 45; }
+.theme-id { --accent: 139 0 0; }
+.theme-en { --accent: 99 102 241; }
+
+.accent-glow {
+  filter: blur(120px);
+  opacity: 0.15;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-thumb { background: rgb(var(--accent) / 0.3); }

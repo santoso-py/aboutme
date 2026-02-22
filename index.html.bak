@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | San Rui</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Operations & Technology Professional - SQL, Data Analysis, SaaS Implementation, Automation">
+    <meta name="keywords" content="operations, technology, SQL, data analysis, SaaS, automation, dashboard">
+    <meta name="author" content="San Rui">
+    <meta property="og:title" content="About Me | San Rui">
+    <meta property="og:description" content="Operations & Technology Professional specializing in SQL, data analysis, and system optimization">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/a/ACg8ocJ6dFqK_uBb6otJDaDODQeGY3B9EQFt0RDVxmYHr3C9HqbqjEM6UA=s576-c-no">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg-primary: #0a0a0b;
+            --bg-secondary: #141416;
+            --bg-tertiary: #1c1c1f;
+            --text-primary: #fafafa;
+            --text-secondary: rgba(250, 250, 250, 0.6);
+            --text-muted: rgba(250, 250, 250, 0.4);
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --border: rgba(250, 250, 250, 0.08);
+            --glass-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        [data-theme="light"] {
+            --bg-primary: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --bg-tertiary: #f1f3f5;
+            --text-primary: #111113;
+            --text-secondary: rgba(17, 17, 19, 0.6);
+            --text-muted: rgba(17, 17, 19, 0.4);
+            --border: rgba(17, 17, 19, 0.08);
+            --glass-bg: rgba(0, 0, 0, 0.02);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            min-height: 100vh;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            transition: background 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        /* Loading Screen */
+        .loader {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-content {
+            text-align: center;
+        }
+
+        .loader-spinner {
+            width: 48px;
+            height: 48px;
+            border: 3px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 16px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* Particles */
+        .particles {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.12;
+            animation: float 20s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+            25% { transform: translateY(-30px) translateX(15px) scale(1.1); }
+            50% { transform: translateY(10px) translateX(-20px) scale(0.95); }
+            75% { transform: translateY(-15px) translateX(25px) scale(1.05); }
+        }
+
+        .grid-lines {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            background-image: 
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
+            opacity: 0.5;
+            transform: translateY(var(--scroll-offset, 0));
+            transition: transform 0.1s ease-out;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 64px;
+            padding-top: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .location-badge {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .theme-toggle {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-tertiary);
+            transform: rotate(15deg);
+        }
+
+        .lang-switch {
+            display: flex;
+            gap: 4px;
+            background: var(--glass-bg);
+            padding: 4px;
+            border-radius: 10px;
+            border: 1px solid var(--border);
+        }
+
+        .lang-btn {
+            padding: 8px 14px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-bottom: 64px;
+            padding: 40px 0;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 24px;
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.3);
+            animation: avatarFloat 6s ease-in-out infinite;
+            border: 3px solid var(--accent);
+        }
+
+        @keyframes avatarFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.75rem, 5vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+        }
+
+        .typing-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 20px;
+            min-height: 1.6em;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--accent);
+            margin-left: 2px;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), #0ea5e9);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-tertiary);
+            border-color: var(--accent);
+        }
+
+        /* Sections */
+        .section {
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.15s; }
+        .section:nth-child(3) { animation-delay: 0.25s; }
+        .section:nth-child(4) { animation-delay: 0.35s; }
+        .section:nth-child(5) { animation-delay: 0.45s; }
+        .section:nth-child(6) { animation-delay: 0.55s; }
+        .section:nth-child(7) { animation-delay: 0.65s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 16px;
+            height: 2px;
+            background: var(--accent);
+            border-radius: 1px;
+        }
+
+        .card {
+            padding: 28px;
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 14px;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        @media (max-width: 600px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .skill-group h3 {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            position: relative;
+            padding: 8px 14px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .skill-tag::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .skill-tag:hover::before {
+            width: 100%;
+        }
+
+        /* Projects */
+        .projects {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .project {
+            padding: 24px;
+            background: var(--bg-secondary);
+            border-radius: 14px;
+            border: 1px solid transparent;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .project:hover {
+            border-color: var(--accent);
+            transform: translateX(12px);
+            box-shadow: 0 8px 32px rgba(99, 102, 241, 0.1);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .project-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .project:hover .project-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .project:nth-child(1) .project-icon { background: rgba(99, 102, 241, 0.15); color: var(--accent-light); }
+        .project:nth-child(2) .project-icon { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+        .project:nth-child(3) .project-icon { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+        .project:nth-child(4) .project-icon { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+        .project-info {
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .project-tech {
+            font-size: 0.7rem;
+            color: var(--accent-light);
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .project-desc {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-details {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border);
+            display: none;
+        }
+
+        .project:hover .project-details {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .project-details ul {
+            list-style: none;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .project-details li {
+            padding: 4px 0;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .project-details li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-light);
+        }
+
+        /* Focus */
+        .focus-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .focus-tag {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 18px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 0.82rem;
+            transition: all 0.3s ease;
+        }
+
+        .focus-tag:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .focus-tag i {
+            font-size: 12px;
+            color: var(--accent-light);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+
+        .contact-item:nth-child(1) i { background: rgba(99, 102, 241, 0.15); color: var(--accent-light); }
+        .contact-item:nth-child(2) i { background: rgba(14, 165, 233, 0.15); color: #38bdf8; }
+        .contact-item:nth-child(3) i { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+
+        .contact-info {
+            flex: 1;
+        }
+
+        .contact-label {
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .contact-value {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Social */
+        .social {
+            margin-top: 48px;
+            text-align: center;
+            padding: 32px;
+            background: var(--glass-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .social-title {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, var(--accent), #0ea5e9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: var(--accent);
+            border: none;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+        }
+
+        /* Cursor */
+        .cursor-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.5;
+            transition: transform 0.15s ease;
+            mix-blend-mode: difference;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+
+            .header-left {
+                justify-content: space-between;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <p class="loader-text">Loading...</p>
+        </div>
+    </div>
+
+    <div class="cursor-dot" id="cursor"></div>
+    <div class="particles" id="particles"></div>
+    <div class="grid-lines" id="gridLines"></div>
+
+    <div class="container">
+        <header class="header">
+            <div class="header-left">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="en">EN</button>
+                    <button class="lang-btn" data-lang="id">ID</button>
+                    <button class="lang-btn" data-lang="jp">JP</button>
+                </div>
+                <div class="location-badge">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span data-en="Indonesia (WIB)" data-id="Indonesia (WIB)" data-jp="インドネシア (WIB)">Indonesia (WIB)</span>
+                </div>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </header>
+
+        <div class="hero">
+            <img src="https://lh3.googleusercontent.com/a/ACg8ocJ6dFqK_uBb6otJDaDODQeGY3B9EQFt0RDVxmYHr3C9HqbqjEM6UA=s576-c-no" alt="Profile" class="avatar">
+            <h1>San Rui</h1>
+            <p class="typing-text">
+                <span id="typingContent"></span><span class="typing-cursor"></span>
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span data-en="Get in Touch" data-id="Hubungi Saya" data-jp="お問い合わせ">Get in Touch</span>
+                </a>
+                <a href="#projects" class="btn btn-secondary">
+                    <i class="fa-solid fa-folder-open"></i>
+                    <span data-en="View Projects" data-id="Lihat Proyek" data-jp="プロジェクトを見る">View Projects</span>
+                </a>
+            </div>
+        </div>
+
+        <section class="section" id="about">
+            <div class="section-label" data-en="About" data-id="Tentang" data-jp="概要">About</div>
+            <div class="card">
+                <div class="about-text">
+                    <p data-en="I am an operations and technology professional with a strong focus on data, system efficiency, and practical problem solving. My core technical expertise is in SQL and data analysis, which I use extensively to extract insights, troubleshoot issues, and support business decision-making." data-id="Saya adalah profesional operasi dan teknologi dengan fokus kuat pada data, efisiensi sistem, dan pemecahan masalah praktis. Keahlian teknis utama saya adalah SQL dan analisis data, yang saya gunakan secara ekstensif untuk mendapatkan wawasan, memecahkan masalah, dan mendukung pengambilan keputusan bisnis." data-jp="私はデータ、システム効率、実用的な問題解決に重点を置くオペレーション・テクノロジーの専門家です。主な技術専門性はSQLとデータ分析であり、洞察の抽出、問題の解決、ビジネス意思決定のサポートに積極的に活用しています。"></p>
+                    <p data-en="I have hands-on experience in SaaS implementations, distribution systems, and operational analytics. I translate business requirements into actionable technical solutions, identifying bottlenecks and designing improvements that work for teams on the ground." data-id="Saya memiliki pengalaman langsung dalam implementasi SaaS, sistem distribusi, dan analitik operasional. Saya menerjemahkan kebutuhan bisnis menjadi solusi teknis yang dapat diterapkan, mengidentifikasi bottleneck dan mendesain peningkatan yang efektif untuk tim lapangan." data-jp="SaaS実装、分散システム、オペレーション分析の実務経験があります。ビジネス要件を実行可能な技術ソリューションに変換し、ボトルネックの特定と現場チームのための改善を設計します。"></p>
+                    <p data-en="I value clear communication, structured thinking, and building collaborative environments. I believe technology should simplify complexity, not add to it." data-id="Saya menghargai komunikasi yang jelas, pemikiran terstruktur, dan membangun lingkungan kolaboratif. Saya percaya teknologi harus menyederhanakan kompleksitas, bukan menambahkannya." data-jp="明確なコミュニケーション、構造化された思考、コラボレーティブな環境の構築を重視しています。技術は複雑さを増すのではなく、簡素化するべきだと信じています。"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="section-label" data-en="Skills" data-id="Keterampilan" data-jp="スキル">Skills</div>
+            <div class="card">
+                <div class="skills-grid">
+                    <div class="skill-group">
+                        <h3 data-en="Technical" data-id="Teknis" data-jp="技術">Technical</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">SaaS</span>
+                            <span class="skill-tag">Automation</span>
+                            <span class="skill-tag">Terminal</span>
+                            <span class="skill-tag">Documentation</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">ClickHouse</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h3 data-en="Professional" data-id="Profesional" data-jp="プロフェッショナル">Professional</h3>
+                        <div class="skill-list">
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Strategic</span>
+                            <span class="skill-tag">Adaptability</span>
+                            <span class="skill-tag">Ownership</span>
+                            <span class="skill-tag">Team Building</span>
+                            <span class="skill-tag">Stakeholder Mgmt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="section-label" data-en="Projects" data-id="Proyek" data-jp="プロジェクト">Projects</div>
+            <div class="card">
+                <div class="projects">
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fa-solid fa-sitemap"></i></div>
+                            <div class="project-info">
+                                <h3 class="project-title" data-en="CMS Matrix Role" data-id="CMS Matrix Role" data-jp="CMSマトリックスロール">CMS Matrix Role</h3>
+                                <p class="project-tech">HTML / JavaScript / CSV Config</p>
+                            </div>
+                        </div>
+                        <p class="project-desc" data-en="Tools matrix for fast and efficient role configuration management. Manages approval workflows and user access permissions." data-id="Tools matrix untuk manajemen konfigurasi role yang cepat dan efisien. Mengelola alur persetujuan dan izin akses pengguna." data-jp="高速で効率的なロール構成管理のためのツールマトリックス。承認ワークフローとユーザーアクセス権限を管理します。">Tools matrix for fast and efficient role configuration management.</p>
+                        <div class="project-details">
+                            <ul>
+                                <li data-en="Approval matrix configuration" data-id="Konfigurasi matriks persetujuan" data-jp="承認マトリックス設定"></li>
+                                <li data-en="User access management" data-id="Manajemen akses pengguna" data-jp="ユーザーアクセス管理"></li>
+                                <li data-en="Excel & SQL script generation" data-id="Pembuatan Excel & script SQL" data-jp="Excel＆SQLスクリプト生成"></li>
+                                <li data-en="Master data mapping" data-id="Pemetaan master data" data-jp="マスターデータマッピング"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fa-solid fa-chart-line"></i></div>
+                            <div class="project-info">
+                                <h3 class="project-title" data-en="Operation Tech Support Dashboard" data-id="Dashboard Tech Support Operasi" data-jp="オペレーションテックサポートダッシュボード">Operation Tech Support Dashboard</h3>
+                                <p class="project-tech">Python / Flask / MySQL / ClickHouse</p>
+                            </div>
+                        </div>
+                        <p class="project-desc" data-en="Operational monitoring dashboard with ticketing, GPS tracking, forecasting, and transaction recalculation features." data-id="Dashboard monitoring operasional dengan fitur ticketing, pelacakan GPS, peramalan, dan perhitungan ulang transaksi." data-jp="チケット、GPS追跡、予測、取引再計算機能を備えたオペレーショナル監視ダッシュボード。">Operational monitoring dashboard with ticketing, GPS tracking, forecasting.</p>
+                        <div class="project-details">
+                            <ul>
+                                <li data-en="Real-time operational monitoring" data-id="Monitoring operasional real-time" data-jp="リアルタイム運用監視"></li>
+                                <li data-en="Ticket management system" data-id="Sistem manajemen ticket" data-jp="チケット管理システム"></li>
+                                <li data-en="GPS tracking for field teams" data-id="Pelacakan GPS untuk tim lapangan" data-jp="現地チーム向けGPS追跡"></li>
+                                <li data-en="Forecasting & analytics" data-id="Peramalan & analitik" data-jp="予測と分析"></li>
+                                <li data-en="Transaction recalculation" data-id="Perhitungan ulang transaksi" data-jp="取引再計算"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fa-solid fa-user-check"></i></div>
+                            <div class="project-info">
+                                <h3 class="project-title" data-en="Dashboard Attendance & Tracking" data-id="Dashboard Absensi & Pelacakan" data-jp="ダッシュボード出席＆追跡">Dashboard Attendance & Tracking</h3>
+                                <p class="project-tech">Python / Flask / MySQL</p>
+                            </div>
+                        </div>
+                        <p class="project-desc" data-en="Attendance tracking dashboard for field technicians with site visit logging and GPS validation." data-id="Dashboard pelacakan kehadiran untuk teknisi lapangan dengan pencatatan kunjungan site dan validasi GPS." data-jp="サイト訪問記録とGPS検証機能を備えた現場技術者の出席追跡ダッシュボード。">Attendance tracking dashboard for field technicians with GPS validation.</p>
+                        <div class="project-details">
+                            <ul>
+                                <li data-en="Geographical hierarchy management" data-id="Manajemen hierarki geografis" data-jp="地理的階層管理"></li>
+                                <li data-en="Attendance tracking system" data-id="Sistem pelacakan kehadiran" data-jp="出席追跡システム"></li>
+                                <li data-en="Site visit logging with GPS" data-id="Pencatatan kunjungan site dengan GPS" data-jp="GPS付きサイト訪問記録"></li>
+                                <li data-en="Technician performance analytics" data-id="Analitik kinerja teknisi" data-jp="技術者のパフォーマンス分析"></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <div class="project-header">
+                            <div class="project-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <div class="project-info">
+                                <h3 class="project-title" data-en="Ticketing Chatbot" data-id="Chatbot Ticketing" data-jp="チケットティングチャットボット">Ticketing Chatbot</h3>
+                                <p class="project-tech">Node.js / Puppeteer / MySQL</p>
+                            </div>
+                        </div>
+                        <p class="project-desc" data-en="WhatsApp chatbot for instant ticket creation directly from chat conversations." data-id="Chatbot WhatsApp untuk pembuatan ticket instan langsung dari percakapan chat." data-jp="チャット会話から直接チケットを作成できるWhatsAppチャットボット。">WhatsApp chatbot for instant ticket creation from chat.</p>
+                        <div class="project-details">
+                            <ul>
+                                <li data-en="Instant ticket creation via WhatsApp" data-id="Pembuatan ticket instan via WhatsApp" data-jp="WhatsApp経由のインスタントチケット作成"></li>
+                                <li data-en="Ticket notification system" data-id="Sistem notifikasi ticket" data-jp="チケット通知システム"></li>
+                                <li data-en="Docker deployment" data-id="Deploy dengan Docker" data-jp="Dockerデプロイメント"></li>
+                                <li data-en="PM2 process management" data-id="Manajemen proses PM2" data-jp="PM2プロセス管理"></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="focus">
+            <div class="section-label" data-en="Focus" data-id="Fokus" data-jp="焦点">Focus</div>
+            <div class="card">
+                <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 0.9rem;" data-en="Building scalable solutions with long-term impact through data, AI-assisted development, and digital product creation." data-id="Membangun solusi yang dapat diskalakan dengan dampak jangka panjang melalui data, pengembangan berbantuan AI, dan pembuatan produk digital." data-jp="データ、AI支援開発、デジタル製品作成を通じて、長期的な影響を与えるスケーラブルなソリューションを構築しています。"></p>
+                <div class="focus-tags">
+                    <div class="focus-tag"><i class="fa-solid fa-database"></i><span data-en="Data Engineering" data-id="Rekayasa Data" data-jp="データエンジニアリング">Data Engineering</span></div>
+                    <div class="focus-tag"><i class="fa-solid fa-robot"></i><span data-en="AI Development" data-id="Pengembangan AI" data-jp="AI開発">AI Development</span></div>
+                    <div class="focus-tag"><i class="fa-solid fa-box-open"></i><span data-en="Digital Product" data-id="Produk Digital" data-jp="デジタル製品">Digital Product</span></div>
+                    <div class="focus-tag"><i class="fa-solid fa-bolt"></i><span data-en="Automation" data-id="Otomatisasi" data-jp="自動化">Automation</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contact">
+            <div class="section-label" data-en="Contact" data-id="Kontak" data-jp="連絡先">Contact</div>
+            <div class="card">
+                <div class="contact-grid">
+                    <a href="https://www.instagram.com/san.rui/" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <div class="contact-info">
+                            <p class="contact-label">Instagram</p>
+                            <p class="contact-value">@san.rui</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: var(--text-muted);"></i>
+                    </a>
+                    <a href="mailto:snsn04@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div class="contact-info">
+                            <p class="contact-label">Email</p>
+                            <p class="contact-value">snsn04@gmail.com</p>
+                        </div>
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 12px; color: var(--text-muted);"></i>
+                    </a>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div class="contact-info">
+                            <p class="contact-label">Availability</p>
+                            <p class="contact-value" data-en="Open for opportunities" data-id="Terbuka untuk peluang" data-jp="オープニング">Open for opportunities</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p data-en="Built with focus on simplicity" data-id="Dibangun dengan fokus pada kesederhanaan" data-jp="シンプルさに焦点を当てて構築">Built with focus on simplicity</p>
+        </footer>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 800);
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const html = document.documentElement;
+        
+        themeToggle.addEventListener('click', () => {
+            const isDark = html.getAttribute('data-theme') === 'light';
+            html.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            themeToggle.innerHTML = isDark ? '<i class="fa-solid fa-moon"></i>' : '<i class="fa-solid fa-sun"></i>';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            html.setAttribute('data-theme', 'light');
+            themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else if (savedTheme === null) {
+            // Check system preference
+            if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+                html.setAttribute('data-theme', 'light');
+                themeToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
+            }
+        }
+
+        // Language Switch
+        const langBtns = document.querySelectorAll('.lang-btn');
+        
+        function switchLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(el => {
+                const text = el.getAttribute('data-' + lang);
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+            // Restart typing effect
+            startTypingEffect();
+        }
+        
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                langBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                switchLanguage(btn.dataset.lang);
+                localStorage.setItem('lang', btn.dataset.lang);
+            });
+        });
+
+        // Load saved language
+        const savedLang = localStorage.getItem('lang') || 'en';
+        const savedLangBtn = document.querySelector('.lang-btn[data-lang="' + savedLang + '"]');
+        if (savedLangBtn) {
+            savedLangBtn.click();
+        }
+
+        // Particles
+        const particlesContainer = document.getElementById('particles');
+        const colors = ['#6366f1', '#0ea5e9', '#8b5cf6', '#06b6d4'];
+        
+        for (let i = 0; i < 15; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const size = Math.random() * 60 + 20;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (Math.random() * 20 + 15) + 's';
+            particlesContainer.appendChild(particle);
+        }
+
+        // Custom Cursor
+        const cursor = document.getElementById('cursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+        });
+
+        // Parallax Effect
+        const gridLines = document.getElementById('gridLines');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            gridLines.style.setProperty('--scroll-offset', scrollY * 0.1 + 'px');
+        });
+
+        // Scroll to Top
+        const scrollTopBtn = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Typing Effect
+        const typingContent = document.getElementById('typingContent');
+        const typingTexts = {
+            en: "Operations & Technology Professional",
+            id: "Profesional Operasi & Teknologi",
+            jp: "オペレーション＆テクノロジー専門家"
+        };
+        
+        let currentLang = 'en';
+        let typingTimeout;
+        
+        function startTypingEffect() {
+            clearTimeout(typingTimeout);
+            const text = typingTexts[langBtns.find(b => b.classList.contains('active'))?.dataset.lang || 'en'];
+            typingContent.textContent = '';
+            let i = 0;
+            
+            function type() {
+                if (i < text.length) {
+                    typingContent.textContent += text.charAt(i);
+                    i++;
+                    typingTimeout = setTimeout(type, 60);
+                }
+            }
+            type();
+        }
+        
+        // Start typing after loader
+        setTimeout(startTypingEffect, 1000);
+
+        // Scroll animation
+        const sections = document.querySelectorAll('.section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        sections.forEach(section => {
+            section.style.animationPlayState = 'paused';
+            observer.observe(section);
+        });
+
+        // Trigger first sections animation on load
+        setTimeout(() => {
+            sections.forEach(section => {
+                section.style.animationPlayState = 'running';
+            });
+        }, 100);
+    </script>
+</body>
+</html>
