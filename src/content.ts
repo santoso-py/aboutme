@@ -48,24 +48,28 @@ export const content = {
         {
           title: "CMS Matrix Role",
           tech: "HTML / JavaScript / CSV Config",
+          image: "https://scontent-cgk1-1.xx.fbcdn.net/v/t39.30808-6/640135873_10230916796838994_7428814756661344587_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd6889&_nc_ohc=EO0u85kvs8MQ7kNvwFHUjVz&_nc_oc=AdmFxXN89SvOpiH4mantPm4QdACPAhdonpFfiFlia_Dh2cZX89Smcpc3_LC_D8v8BHW9dafDx24VWkw5LgF8mYgy&_nc_zt=23&_nc_ht=scontent-cgk1-1.xx&_nc_gid=IkXydtY9FHmWunCm4-Qg7w&oh=00_AfvQqLAjnYGuQe8YCm83t1O68IZ5UR72PZUGngsodMpR3g&oe=69A0DE87",
           desc: "Tools matrix for fast and efficient role configuration management. Manages approval workflows and user access permissions.",
           details: ["Approval matrix configuration", "User access management", "Excel & SQL script generation", "Master data mapping"]
         },
         {
           title: "Operation Tech Support Dashboard",
-          tech: "Python / Flask / MySQL / ClickHouse",
+          tech: "Python / MySQL / ClickHouse",
+          image: "https://scontent-cgk1-2.xx.fbcdn.net/v/t39.30808-6/638318522_10230916797199003_3279511011309783913_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd6889&_nc_ohc=UmHpoTaxj4EQ7kNvwHwMwQP&_nc_oc=Adm_3SFslluf_3kGQoQB2WSAg3TKGnU20GfYqOhUYhCO52QFTG_QUyCnjfBK1edieMMSUd7Ts1dWJTknkcmTsp3e&_nc_zt=23&_nc_ht=scontent-cgk1-2.xx&_nc_gid=qw_dWhPx-h7eY5x1_g7w8g&oh=00_AfsfvKl84f2tNqRdrvGmiO8V3-imbdy1yy3HwhUa-GJXXg&oe=69A0E885",
           desc: "Operational monitoring dashboard with ticketing, GPS tracking, forecasting, and transaction recalculation features.",
           details: ["Real-time operational monitoring", "Ticket management system", "GPS tracking for field teams", "Forecasting & analytics", "Transaction recalculation"]
         },
         {
           title: "Dashboard Attendance & Tracking",
-          tech: "Python / Flask / MySQL",
+          tech: "Python / MySQL",
+          image: "https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/641303734_10230916797799018_1971406329516985387_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd6889&_nc_ohc=qJjKPRXZnVIQ7kNvwG9NQkD&_nc_oc=AdndaeoYQtQZib5upc2emIdSohtSpQHoV3Hp_6F0TZDnSedr43iyP2CPPuh9dsEE8UL9rOr8IvdfyyDoel8yOZUp&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=OYWkNp5xrTUeYOHQqjtK9A&oh=00_Afv_ivuMYkTjEBDr7RsW4LEknIfvMG5pg8fRhXCoAcOCQw&oe=69A0F95A",
           desc: "Attendance tracking dashboard for field technicians with site visit logging and GPS validation.",
           details: ["Geographical hierarchy management", "Attendance tracking system", "Site visit logging with GPS", "Technician performance analytics"]
         },
         {
           title: "Ticketing Chatbot",
           tech: "Node.js / Puppeteer / MySQL",
+          image: "https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/639093101_10230916797159002_5628026265311585842_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd6889&_nc_ohc=vRuocKhnvxkQ7kNvwFjwwnS&_nc_oc=AdlFg-q_qpF9q4V4YMOfOolo9zdU7LAlv0ER5JpPQ8oBnUkRroUCh62PV9VzEgyziL-bylgZS2Pi_EUWiYvRq0ZR&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=CdCayMEH4VsVEUDm9ueUAQ&oh=00_Afv8V42UdH-IbqSLyV9e7H2eyz5g1zhSzmsch00dp_aQZg&oe=69A0CE71",
           desc: "WhatsApp chatbot for instant ticket creation directly from chat conversations.",
           details: ["Instant ticket creation via WhatsApp", "Ticket notification system", "Docker deployment", "PM2 process management"]
         }
@@ -128,24 +132,28 @@ export const content = {
         {
           title: "CMS Matrix Role",
           tech: "HTML / JavaScript / CSV Config",
+          image: "https://scontent-cgk1-1.xx.fbcdn.net/v/t39.30808-6/640135873_10230916796838994_7428814756661344587_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd6889&_nc_ohc=EO0u85kvs8MQ7kNvwFHUjVz&_nc_oc=AdmFxXN89SvOpiH4mantPm4QdACPAhdonpFfiFlia_Dh2cZX89Smcpc3_LC_D8v8BHW9dafDx24VWkw5LgF8mYgy&_nc_zt=23&_nc_ht=scontent-cgk1-1.xx&_nc_gid=IkXydtY9FHmWunCm4-Qg7w&oh=00_AfvQqLAjnYGuQe8YCm83t1O68IZ5UR72PZUGngsodMpR3g&oe=69A0DE87",
           desc: "Tools matrix untuk manajemen konfigurasi role yang cepat dan efisien. Mengelola alur persetujuan dan izin akses pengguna.",
           details: ["Konfigurasi matriks persetujuan", "Manajemen akses pengguna", "Pembuatan Excel & script SQL", "Pemetaan master data"]
         },
         {
           title: "Dashboard Tech Support Operasi",
-          tech: "Python / Flask / MySQL / ClickHouse",
+          tech: "Python / MySQL / ClickHouse",
+          image: "https://scontent-cgk1-2.xx.fbcdn.net/v/t39.30808-6/638318522_10230916797199003_3279511011309783913_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd6889&_nc_ohc=UmHpoTaxj4EQ7kNvwHwMwQP&_nc_oc=Adm_3SFslluf_3kGQoQB2WSAg3TKGnU20GfYqOhUYhCO52QFTG_QUyCnjfBK1edieMMSUd7Ts1dWJTknkcmTsp3e&_nc_zt=23&_nc_ht=scontent-cgk1-2.xx&_nc_gid=qw_dWhPx-h7eY5x1_g7w8g&oh=00_AfsfvKl84f2tNqRdrvGmiO8V3-imbdy1yy3HwhUa-GJXXg&oe=69A0E885",
           desc: "Dashboard monitoring operasional dengan fitur ticketing, pelacakan GPS, peramalan, dan perhitungan ulang transaksi.",
           details: ["Monitoring operasional real-time", "Sistem manajemen ticket", "Pelacakan GPS untuk tim lapangan", "Peramalan & analitik", "Perhitungan ulang transaksi"]
         },
         {
           title: "Dashboard Absensi & Pelacakan",
-          tech: "Python / Flask / MySQL",
+          tech: "Python / MySQL",
+          image: "https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/641303734_10230916797799018_1971406329516985387_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd6889&_nc_ohc=qJjKPRXZnVIQ7kNvwG9NQkD&_nc_oc=AdndaeoYQtQZib5upc2emIdSohtSpQHoV3Hp_6F0TZDnSedr43iyP2CPPuh9dsEE8UL9rOr8IvdfyyDoel8yOZUp&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=OYWkNp5xrTUeYOHQqjtK9A&oh=00_Afv_ivuMYkTjEBDr7RsW4LEknIfvMG5pg8fRhXCoAcOCQw&oe=69A0F95A",
           desc: "Dashboard pelacakan kehadiran untuk teknisi lapangan dengan pencatatan kunjungan site dan validasi GPS.",
           details: ["Manajemen hierarki geografis", "Sistem pelacakan kehadiran", "Pencatatan kunjungan site dengan GPS", "Analitik kinerja teknisi"]
         },
         {
           title: "Chatbot Ticketing",
           tech: "Node.js / Puppeteer / MySQL",
+          image: "https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/639093101_10230916797159002_5628026265311585842_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd6889&_nc_ohc=vRuocKhnvxkQ7kNvwFjwwnS&_nc_oc=AdlFg-q_qpF9q4V4YMOfOolo9zdU7LAlv0ER5JpPQ8oBnUkRroUCh62PV9VzEgyziL-bylgZS2Pi_EUWiYvRq0ZR&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=CdCayMEH4VsVEUDm9ueUAQ&oh=00_Afv8V42UdH-IbqSLyV9e7H2eyz5g1zhSzmsch00dp_aQZg&oe=69A0CE71",
           desc: "Chatbot WhatsApp untuk pembuatan ticket instan langsung dari percakapan chat.",
           details: ["Pembuatan ticket instan via WhatsApp", "Sistem notifikasi ticket", "Deploy dengan Docker", "Manajemen proses PM2"]
         }
@@ -195,9 +203,8 @@ export const content = {
         },
         {
           role: "データサポート",
-          company: "2019年8月 - 2020年12月",
-          company_name: "Pitjarus Teknologi",
-          period: "Aug 2019 - Dec 2020",
+          company: "Pitjarus Teknologi",
+          period: "2019年8月 - 2020年12月",
           desc: "データの整合性、インポート/エクスポート、運用レポートの管理。",
           tech: ["MySQL", "Excel"]
         }
@@ -209,24 +216,28 @@ export const content = {
         {
           title: "CMSマトリックスロール",
           tech: "HTML / JavaScript / CSV Config",
+          image: "https://scontent-cgk1-1.xx.fbcdn.net/v/t39.30808-6/640135873_10230916796838994_7428814756661344587_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd6889&_nc_ohc=EO0u85kvs8MQ7kNvwFHUjVz&_nc_oc=AdmFxXN89SvOpiH4mantPm4QdACPAhdonpFfiFlia_Dh2cZX89Smcpc3_LC_D8v8BHW9dafDx24VWkw5LgF8mYgy&_nc_zt=23&_nc_ht=scontent-cgk1-1.xx&_nc_gid=IkXydtY9FHmWunCm4-Qg7w&oh=00_AfvQqLAjnYGuQe8YCm83t1O68IZ5UR72PZUGngsodMpR3g&oe=69A0DE87",
           desc: "高速で効率的なロール構成管理のためのツールマトリックス。承認ワークフローとユーザーアクセス権限を管理します。",
           details: ["承認マトリックス設定", "ユーザーアクセス管理", "Excel＆SQLスクリプト生成", "マスターデータマッピング"]
         },
         {
           title: "オペレーションテックサポートダッシュボード",
-          tech: "Python / Flask / MySQL / ClickHouse",
+          tech: "Python / MySQL / ClickHouse",
+          image: "https://scontent-cgk1-2.xx.fbcdn.net/v/t39.30808-6/638318522_10230916797199003_3279511011309783913_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=dd6889&_nc_ohc=UmHpoTaxj4EQ7kNvwHwMwQP&_nc_oc=Adm_3SFslluf_3kGQoQB2WSAg3TKGnU20GfYqOhUYhCO52QFTG_QUyCnjfBK1edieMMSUd7Ts1dWJTknkcmTsp3e&_nc_zt=23&_nc_ht=scontent-cgk1-2.xx&_nc_gid=qw_dWhPx-h7eY5x1_g7w8g&oh=00_AfsfvKl84f2tNqRdrvGmiO8V3-imbdy1yy3HwhUa-GJXXg&oe=69A0E885",
           desc: "チケット、GPS追跡、予測、取引再計算機能を備えたオペレーショナル監視ダッシュボード。",
           details: ["リアルタイム運用監視", "チケット管理システム", "現地チーム向けGPS追跡", "予測と分析", "取引再計算"]
         },
         {
           title: "ダッシュボード出席＆追跡",
-          tech: "Python / Flask / MySQL",
+          tech: "Python / MySQL",
+          image: "https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/641303734_10230916797799018_1971406329516985387_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd6889&_nc_ohc=qJjKPRXZnVIQ7kNvwG9NQkD&_nc_oc=AdndaeoYQtQZib5upc2emIdSohtSpQHoV3Hp_6F0TZDnSedr43iyP2CPPuh9dsEE8UL9rOr8IvdfyyDoel8yOZUp&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=OYWkNp5xrTUeYOHQqjtK9A&oh=00_Afv_ivuMYkTjEBDr7RsW4LEknIfvMG5pg8fRhXCoAcOCQw&oe=69A0F95A",
           desc: "サイト訪問記録とGPS検証機能を備えた現場技術者の出席追跡ダッシュボード。",
           details: ["地理的階層管理", "出席追跡システム", "GPS付きサイト訪問記録", "技術者のパフォーマンス分析"]
         },
         {
           title: "チケットティングチャットボット",
           tech: "Node.js / Puppeteer / MySQL",
+          image: "https://scontent-cgk2-1.xx.fbcdn.net/v/t39.30808-6/639093101_10230916797159002_5628026265311585842_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd6889&_nc_ohc=vRuocKhnvxkQ7kNvwFjwwnS&_nc_oc=AdlFg-q_qpF9q4V4YMOfOolo9zdU7LAlv0ER5JpPQ8oBnUkRroUCh62PV9VzEgyziL-bylgZS2Pi_EUWiYvRq0ZR&_nc_zt=23&_nc_ht=scontent-cgk2-1.xx&_nc_gid=CdCayMEH4VsVEUDm9ueUAQ&oh=00_Afv8V42UdH-IbqSLyV9e7H2eyz5g1zhSzmsch00dp_aQZg&oe=69A0CE71",
           desc: "チャット会話から直接チケットを作成できるWhatsAppチャットボット。",
           details: ["WhatsApp経由のインスタントチケット作成", "チケット通知システム", "Dockerデプロイメント", "PM2プロセス管理"]
         }

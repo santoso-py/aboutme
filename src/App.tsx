@@ -3,11 +3,12 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'fra
 import { 
   Sun, Moon, MapPin, Mail, Instagram, Database, Bot, Box, Bolt, 
   ChevronDown, ExternalLink, User, Terminal, Layers, Layout, 
-  ArrowUpRight, Globe, Code2, Sparkles, Rocket
+  ArrowUpRight, Globe, Code2, Sparkles, Rocket, Cpu
 } from 'lucide-react';
 import { clsx, type ClassValue } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 import { content } from './content';
+import { PrototypePlayer } from './components/PrototypePlayer';
 
 function cn(...inputs: ClassValue[]) { return twMerge(clsx(inputs)); }
 
@@ -15,7 +16,7 @@ type Language = 'en' | 'id' | 'jp';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
-  const [isDark, setIsDark] = useState(true);
+  const [isDark, setIsDark] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
   const t = useMemo(() => content[lang], [lang]);
@@ -25,15 +26,6 @@ const App: React.FC = () => {
 
   const yHero = useTransform(springScroll, [0, 0.2], [0, -100]);
   const opacityHero = useTransform(springScroll, [0, 0.15], [1, 0]);
-  const yAbout = useTransform(springScroll, [0.1, 0.35], [100, -50]);
-  const yExp = useTransform(springScroll, [0.3, 0.55], [150, -50]);
-  const yProjects = useTransform(springScroll, [0.5, 0.8], [200, -50]);
-  const scaleAvatar = useTransform(springScroll, [0, 0.2], [1, 1.1]);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-  }, [isDark]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => setMousePos({ x: e.clientX, y: e.clientY });
@@ -41,33 +33,47 @@ const App: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', isDark);
+  }, [isDark]);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') setIsDark(true);
+    const savedLang = localStorage.getItem('lang') as Language;
+    if (savedLang) setLang(savedLang);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('lang', lang);
+  }, [lang]);
+
   return (
     <div ref={containerRef} className={cn(
-      "min-h-[500vh] transition-all duration-700 selection:bg-accent/20",
+      "min-h-[500vh] transition-all duration-1000 selection:bg-accent/20 relative overflow-x-hidden",
       isDark ? "dark text-zinc-100" : "light text-zinc-900",
       `theme-${lang}`
     )}>
-      {/* BACKGROUND ELEMENTS */}
+      <div className="grain-texture" />
       <div className="dot-grid" />
+      
       <div 
-        className="fixed inset-0 pointer-events-none accent-glow z-0"
-        style={{
-          background: `radial-gradient(circle 800px at ${mousePos.x}px ${mousePos.y}px, rgb(var(--accent) / 0.1), transparent 100%)`
-        }}
+        className="fixed inset-0 pointer-events-none accent-glow z-0 transition-all duration-1000"
+        style={{ background: `radial-gradient(circle 800px at ${mousePos.x}px ${mousePos.y}px, rgb(var(--accent) / 0.08), transparent 100%)` }}
       />
 
-      {/* MINIMAL NAVIGATION */}
-      <nav className="fixed top-8 left-8 right-8 flex justify-between items-center z-50 px-4">
+      {/* MINIMAL NAV */}
+      <nav className="fixed top-8 left-8 right-8 flex justify-between items-center z-[100] px-4">
         <div className="flex items-center gap-6">
           <div className="text-[10px] font-black tracking-[0.4em] uppercase opacity-40">San Rui</div>
-          <div className="flex gap-4">
+          <div className="flex gap-2 bg-white/5 backdrop-blur-2xl p-1.5 rounded-full border border-white/10 shadow-2xl">
             {(['en', 'id', 'jp'] as Language[]).map((l) => (
               <button
                 key={l}
                 onClick={() => setLang(l)}
                 className={cn(
-                  "text-[9px] font-black uppercase tracking-widest transition-all",
-                  lang === l ? "text-accent scale-110" : "opacity-30 hover:opacity-100"
+                  "px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest transition-all duration-500",
+                  lang === l ? "bg-accent text-white shadow-xl shadow-accent/30" : "opacity-30 hover:opacity-100"
                 )}
               >
                 {l}
@@ -75,196 +81,114 @@ const App: React.FC = () => {
             ))}
           </div>
         </div>
-        <button onClick={() => setIsDark(!isDark)} className="opacity-30 hover:opacity-100 transition-opacity">
-          {isDark ? <Sun size={18} /> : <Moon size={18} />}
+        <button 
+          onClick={() => setIsDark(!isDark)} 
+          className="w-12 h-12 rounded-full flex items-center justify-center bg-white/5 backdrop-blur-2xl border border-white/10 shadow-2xl transition-all hover:scale-110"
+        >
+          {isDark ? <Sun size={20} /> : <Moon size={20} />}
         </button>
       </nav>
 
-      {/* HERO SECTION */}
-      <motion.section 
-        style={{ y: yHero, opacity: opacityHero }}
-        className="fixed inset-0 flex flex-col items-center justify-center text-center px-6 z-10"
-      >
-        <motion.div style={{ scale: scaleAvatar }} className="relative mb-12">
+      {/* HERO */}
+      <motion.section style={{ y: yHero, opacity: opacityHero }} className="fixed inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
+        <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1.5, ease: "circOut" }} className="relative mb-16">
            <img 
             src="https://lh3.googleusercontent.com/a/ACg8ocJ6dFqK_uBb6otJDaDODQeGY3B9EQFt0RDVxmYHr3C9HqbqjEM6UA=s576-c-no" 
-            className="w-44 h-44 rounded-full transition-all duration-1000 object-cover border-4 border-accent/20"
+            className="w-52 h-52 rounded-full transition-all duration-1000 object-cover border-8 border-white/5 shadow-[0_0_80px_rgba(var(--accent),0.2)]"
             alt="San Rui"
           />
-          <div className="absolute -inset-4 border border-accent/10 rounded-full animate-pulse" />
+          <div className="absolute -inset-6 border border-accent/10 rounded-full animate-[spin_10s_linear_infinite] border-dashed" />
+          {lang === 'jp' && <div className="absolute -top-4 -right-4 bg-accent text-white px-3 py-1 rounded-lg font-black text-[10px] rotate-12">お前はもう</div>}
         </motion.div>
 
-        <h1 className="text-6xl md:text-[10rem] font-black tracking-tighter uppercase leading-[0.8] mb-8">
+        <h1 className="hero-title text-7xl md:text-[13rem] font-black tracking-tighter uppercase leading-[0.75] mb-10 transition-all duration-1000">
            {t.title}
         </h1>
-        <div className="flex items-center gap-4 text-[10px] font-black uppercase tracking-[0.8em] opacity-40">
-          <Sparkles size={14} className="text-accent" />
+        <div className="flex items-center gap-6 text-[11px] font-black uppercase tracking-[1em] opacity-30">
+          <div className="w-12 h-px bg-accent/50" />
           {t.role}
+          <div className="w-12 h-px bg-accent/50" />
         </div>
-        <motion.div 
-          animate={{ y: [0, 10, 0] }} 
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-12 opacity-20"
-        >
-          <ChevronDown size={24} />
-        </motion.div>
       </motion.section>
 
       {/* CONTENT FLOW */}
       <div className="relative z-20 pt-[110vh]">
-        
-        {/* ABOUT & FOCUS */}
-        <motion.section 
-          style={{ y: yAbout }}
-          className="max-w-4xl mx-auto px-6 py-40 mb-60"
-        >
-          <div className="text-[10px] font-black uppercase tracking-[0.6em] text-accent mb-12 opacity-60 flex items-center gap-4">
-            <span className="w-8 h-px bg-accent/30" />
-            {t.about.label}
-          </div>
-          <div className="text-2xl md:text-5xl font-light leading-tight tracking-tight mb-20">
-            {t.about.p1}
-          </div>
-          <div className="grid md:grid-cols-2 gap-12 text-zinc-500 text-lg leading-relaxed">
-            <p>{t.about.p2}</p>
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
-               {t.focus.items.map(item => (
-                 <div key={item} className="flex items-center gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
-                    <span className="text-[10px] font-black uppercase tracking-widest text-accent">{item}</span>
-                 </div>
-               ))}
+        <div className="max-w-6xl mx-auto space-y-80 pb-80 px-6">
+          
+          {/* ABOUT */}
+          <motion.section initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 1 }} className="max-w-4xl mx-auto text-center">
+            <div className="text-[10px] font-black uppercase tracking-[0.6em] text-accent mb-16 opacity-60">Philosophy</div>
+            <div className="text-3xl md:text-6xl font-light leading-[1.1] tracking-tight mb-24 italic">
+              {t.about.p1}
             </div>
-          </div>
-        </motion.section>
-
-        {/* EXPERIENCE (TRAJECTORY) */}
-        <motion.section 
-          style={{ y: yExp }}
-          className="max-w-5xl mx-auto px-6 mb-80"
-        >
-          <div className="text-[10px] font-black uppercase tracking-[0.6em] text-accent mb-24 opacity-60 text-center">
-            {t.experience.label}
-          </div>
-          
-          <div className="space-y-32">
-            {t.experience.items.map((item, idx) => (
-              <div key={idx} className="group flex flex-col md:flex-row gap-12 relative">
-                <div className="md:w-1/4 text-[10px] font-black uppercase tracking-widest opacity-30 group-hover:opacity-100 transition-opacity">
-                  {item.period}
-                </div>
-                <div className="md:w-3/4 space-y-6">
-                  <div className="flex flex-wrap items-baseline gap-4">
-                    <h3 className="text-3xl md:text-5xl font-black tracking-tighter uppercase">{item.role}</h3>
-                    <span className="text-xs font-black uppercase tracking-widest text-accent/60">{item.company}</span>
-                  </div>
-                  <p className="text-xl text-zinc-500 leading-relaxed font-light">{item.desc}</p>
-                  <div className="flex flex-wrap gap-4 pt-4">
-                    {item.tech.map(tech => (
-                      <span key={tech} className="text-[9px] font-black uppercase tracking-widest px-3 py-1.5 border border-zinc-500/10 rounded-full group-hover:border-accent/30 group-hover:text-accent transition-all">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* PROJECTS (WORKS) */}
-        <motion.section 
-          style={{ y: yProjects }}
-          className="max-w-6xl mx-auto px-6 mb-80"
-        >
-          <div className="text-[10px] font-black uppercase tracking-[0.6em] text-accent mb-24 opacity-60 text-center">
-             {t.projects?.label}
-          </div>
-          
-          <div className="space-y-60">
-            {t.projects?.items.map((project, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                className="group relative flex flex-col md:flex-row items-center gap-12"
-              >
-                <div className="md:w-1/2 space-y-8">
-                   <div className="text-6xl md:text-8xl font-black opacity-[0.03] group-hover:opacity-[0.1] transition-opacity absolute -top-20 -left-10 pointer-events-none">
-                     0{idx + 1}
+            <div className="grid md:grid-cols-2 gap-20 text-zinc-500 text-xl leading-relaxed text-left">
+              <p className="font-light">{t.about.p2}</p>
+              <div className="flex flex-wrap gap-x-10 gap-y-6">
+                 {t.focus.items.map(item => (
+                   <div key={item} className="flex items-center gap-4 group cursor-default">
+                      <div className="w-2 h-2 rounded-full bg-accent transition-all group-hover:scale-[2.5] shadow-[0_0_10px_rgba(var(--accent),0.5)]" />
+                      <span className="text-xs font-black uppercase tracking-widest text-accent group-hover:translate-x-2 transition-transform">{item}</span>
                    </div>
-                   <h3 className="text-4xl md:text-7xl font-black tracking-tighter uppercase group-hover:text-accent transition-colors">
-                     {project.title}
-                   </h3>
-                   <div className="h-px w-24 bg-accent/40" />
-                   <p className="text-[10px] font-black uppercase tracking-[0.4em] text-accent/60">
-                     {project.tech}
-                   </p>
-                   <p className="text-xl text-zinc-500 leading-relaxed font-light max-w-xl">
-                     {project.desc}
-                   </p>
-                   <div className="flex flex-wrap gap-4 pt-4">
-                    {project.details.map((detail, dIdx) => (
-                      <span key={dIdx} className="text-[8px] font-black uppercase tracking-widest opacity-40">
-                        // {detail}
-                      </span>
-                    ))}
+                 ))}
+              </div>
+            </div>
+          </motion.section>
+
+          {/* EXPERIENCE */}
+          <section>
+            <div className="text-[10px] font-black uppercase tracking-[0.6em] text-accent mb-32 opacity-60 text-center">Trajectory</div>
+            <div className="space-y-40">
+              {t.experience.items.map((item, idx) => (
+                <motion.div key={idx} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: idx * 0.1 }} className="group flex flex-col md:flex-row gap-16 relative text-left">
+                  <div className="md:w-1/4 text-[11px] font-black uppercase tracking-[0.3em] opacity-20 group-hover:opacity-100 group-hover:text-accent transition-all duration-700">{item.period}</div>
+                  <div className="md:w-3/4 space-y-8">
+                    <h3 className="text-4xl md:text-7xl font-black tracking-tighter uppercase transition-all duration-700">{item.role}</h3>
+                    <div className="flex items-center gap-4">
+                       <div className="w-10 h-px bg-accent/30" />
+                       <span className="text-sm font-black uppercase tracking-widest text-accent/60">{item.company}</span>
+                    </div>
+                    <p className="text-2xl text-zinc-500 leading-snug font-light max-w-3xl">{item.desc}</p>
+                    <div className="flex flex-wrap gap-3 pt-6">
+                      {item.tech.map(tech => (
+                        <span key={tech} className="text-[10px] font-black uppercase tracking-widest px-5 py-2 border border-zinc-500/10 rounded-full hover:border-accent hover:text-accent transition-all duration-500 bg-white/5">{tech}</span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-                <div className="md:w-1/2 flex justify-end">
-                   <ArrowUpRight className="opacity-10 group-hover:text-accent group-hover:opacity-100 transition-all duration-700 group-hover:translate-x-4 group-hover:-translate-y-4" size={120} strokeWidth={1} />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
-        {/* SKILLS & CONTACT */}
-        <section className="max-w-4xl mx-auto px-6 py-40 text-center space-y-40">
-          
-          <div>
-            <div className="text-[10px] font-black uppercase tracking-[0.5em] text-accent mb-16 opacity-60">
-              Tech & Workflow
+                </motion.div>
+              ))}
             </div>
-            <div className="flex flex-wrap justify-center gap-x-16 gap-y-8 text-sm font-black tracking-[0.3em] uppercase opacity-30">
-               {['SQL', 'MySQL', 'Power BI', 'Tableau', 'Vibe Coding', 'AI Automation', 'PRD Design', 'MVP Architecture'].map(s => (
-                 <span key={s} className="hover:opacity-100 hover:text-accent cursor-default transition-all duration-500">{s}</span>
-               ))}
-            </div>
-          </div>
+          </section>
 
-          <div id="contact" className="space-y-16">
-            <div className="inline-block p-4 rounded-full border border-accent/10 mb-4">
-               <Rocket className="text-accent animate-pulse" size={40} />
+          {/* PROJECTS */}
+          <section id="projects" className="relative">
+            <div className="text-[10px] font-black uppercase tracking-[0.6em] text-accent mb-32 opacity-60 text-center">Interactive Lab</div>
+            <div className="relative">
+               <PrototypePlayer />
             </div>
-            <h2 className="text-5xl md:text-[12rem] font-black tracking-tighter uppercase leading-[0.8] mb-12">
-              Ready to <br/> scale?
-            </h2>
-            <div className="flex justify-center gap-16">
-              <a href="mailto:snsn04@gmail.com" className="text-[10px] font-black uppercase tracking-[0.4em] hover:text-accent transition-all relative group">
-                Email
-                <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent group-hover:w-full transition-all" />
-              </a>
-              <a href="https://www.instagram.com/san.rui/" className="text-[10px] font-black uppercase tracking-[0.4em] hover:text-accent transition-all relative group">
-                Instagram
-                <span className="absolute -bottom-2 left-0 w-0 h-px bg-accent group-hover:w-full transition-all" />
-              </a>
+          </section>
+
+          {/* CONTACT */}
+          <section id="contact" className="text-center space-y-40">
+            <div className="space-y-20">
+              <h2 className="text-6xl md:text-[15rem] font-black tracking-tighter uppercase leading-[0.75] transition-all duration-1000">
+                Let's <br/> Scale.
+              </h2>
+              <div className="flex justify-center gap-24">
+                {['Email', 'Instagram'].map(link => (
+                  <a key={link} href={link === 'Email' ? 'mailto:snsn04@gmail.com' : 'https://www.instagram.com/san.rui/'} className="text-xs font-black uppercase tracking-[0.5em] hover:text-accent transition-all duration-500 relative group py-4">
+                    {link}
+                    <span className="absolute bottom-0 left-0 w-0 h-1 bg-accent group-hover:w-full transition-all duration-700" />
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
+            <footer className="pt-40 opacity-10 text-[10px] font-bold tracking-[1em] uppercase">{t.footer}</footer>
+          </section>
 
-          <footer className="pt-40 pb-12 opacity-10 text-[9px] font-black tracking-[0.6em] uppercase">
-            {t.footer}
-          </footer>
-        </section>
-
+        </div>
       </div>
-
-      {/* SMOOTH PROGRESS BAR */}
-      <motion.div 
-        className="fixed bottom-0 left-0 right-0 h-1.5 bg-accent z-50 origin-left"
-        style={{ scaleX: springScroll }}
-      />
+      
+      <motion.div className="fixed bottom-0 left-0 right-0 h-2 bg-accent z-[100] origin-left shadow-[0_-10px_20px_rgba(var(--accent),0.3)]" style={{ scaleX: springScroll }} />
     </div>
   );
 };
