@@ -1,7 +1,7 @@
 export const content = {
   en: {
     title: "San Rui",
-    role: "Operations & Technology Professional",
+    role: "Technical Strategist bridging Data Engineering, Product Architecture, and AI-Driven Innovation",
     location: "Indonesia (WIB)",
     cta: { touch: "Let's Talk", projects: "Works" },
     about: {
@@ -16,29 +16,29 @@ export const content = {
           role: "Operations Supervisor",
           company: "Pitjarus Teknologi",
           period: "Jan 2025 - Present",
-          desc: "Leading large-scale Distribution Management System projects. System optimization, root cause analysis, and stakeholder management.",
-          tech: ["SQL", "Power BI", "Automation", "Database Monitoring"]
+          desc: "Architecting efficiency for large-scale Distribution Management Systems (DMS). I orchestrate automation solutions, lead root-cause forensics, and design Product Requirement Documents (PRDs) that bridge business needs with technical execution.",
+          tech: ["SQL", "System Optimization", "Automation", "PRD Design", "Stakeholder Management"]
         },
         {
           role: "Key Account Supervisor",
           company: "Pitjarus Teknologi",
           period: "Oct 2022 - Dec 2024",
-          desc: "Field operations management, AI-assisted development, and strategic client collaboration.",
-          tech: ["SQL", "Excel", "Power BI", "Tableau"]
+          desc: "Scaled field force operations through AI-assisted development and SQL mentorship. I transformed raw sales data into strategic dashboards (OSA, NPD, SOS) and acted as the primary technical bridge for high-stakes client collaborations.",
+          tech: ["Python", "Power BI", "SQL Development", "AI-Assisted Tools", "Data Analysis"]
         },
         {
           role: "Dedicated Data Support",
           company: "Pitjarus Teknologi",
           period: "Dec 2020 - Sep 2022",
-          desc: "Data validation and reporting for FMCG sectors. Managing complex data structures.",
-          tech: ["MySQL", "Excel", "Data Management"]
+          desc: "Ensured peak data integrity for major FMCG clients. Managed end-to-end data setup, validation workflows, and generated high-precision incentive and root-cause reports.",
+          tech: ["MySQL", "Excel Mastery", "FMCG Analytics", "Data Validation"]
         },
         {
           role: "Data Support",
           company: "Pitjarus Teknologi",
           period: "Aug 2019 - Dec 2020",
-          desc: "Managing data integrity, imports/exports, and operational reporting.",
-          tech: ["MySQL", "Excel"]
+          desc: "Foundation of data operations. Streamlined Excel-to-Database pipelines and established standardized reporting protocols for operational excellence.",
+          tech: ["MySQL", "Excel", "Data Integration", "Reporting"]
         }
       ]
     },
@@ -85,7 +85,7 @@ export const content = {
   },
   id: {
     title: "San Rui",
-    role: "Profesional Operasi & Teknologi",
+    role: "Technical Strategist yang menjembatani Data Engineering, Arsitektur Produk, dan Inovasi Berbasis AI",
     location: "Indonesia (WIB)",
     cta: { touch: "Hubungi Saya", projects: "Karya" },
     about: {
@@ -99,30 +99,30 @@ export const content = {
         {
           role: "Supervisor Operasi",
           company: "Pitjarus Teknologi",
-          period: "Jan 2025 - Present",
-          desc: "Mengelola proyek Sistem Manajemen Distribusi skala besar. Optimisasi sistem, analisis root cause, dan manajemen stakeholder.",
-          tech: ["SQL", "Power BI", "Automation", "Monitoring Database"]
+          period: "Jan 2025 - Sekarang",
+          desc: "Mendesain efisiensi untuk Distribution Management System (DMS) skala besar. Saya mengorkestrasi solusi otomatisasi, memimpin audit root-cause, dan menyusun Product Requirement Documents (PRD) yang menyelaraskan kebutuhan bisnis dengan eksekusi teknis.",
+          tech: ["SQL", "Optimisasi Sistem", "Otomatisasi", "Desain PRD", "Manajemen Stakeholder"]
         },
         {
           role: "Supervisor Key Account",
           company: "Pitjarus Teknologi",
-          period: "Oct 2022 - Dec 2024",
-          desc: "Manajemen operasi lapangan, pengembangan AI-assisted, dan kolaborasi klien strategis.",
-          tech: ["SQL", "Excel", "Power BI", "Tableau"]
+          period: "Okt 2022 - Des 2024",
+          desc: "Meningkatkan skala operasi field force melalui pengembangan berbantuan AI dan bimbingan SQL. Saya mentransformasi data penjualan mentah menjadi dashboard strategis (OSA, NPD, SOS) dan menjadi jembatan teknis utama untuk kolaborasi klien strategis.",
+          tech: ["Python", "Power BI", "Pengembangan SQL", "Tools Berbasis AI", "Analisis Data"]
         },
         {
           role: "Data Support Dedicated",
           company: "Pitjarus Teknologi",
-          period: "Dec 2020 - Sep 2022",
-          desc: "Setup & validasi data serta pelaporan untuk sektor FMCG.",
-          tech: ["MySQL", "Excel", "Manajemen Data"]
+          period: "Des 2020 - Sep 2022",
+          desc: "Memastikan integritas data tertinggi untuk klien FMCG utama. Mengelola setup data end-to-end, alur validasi, serta memproduksi laporan insentif dan root-cause dengan presisi tinggi.",
+          tech: ["MySQL", "Master Excel", "Analitik FMCG", "Validasi Data"]
         },
         {
           role: "Data Support",
           company: "Pitjarus Teknologi",
-          period: "Aug 2019 - Dec 2020",
-          desc: "Manajemen integritas data, import/export, dan pelaporan operasional.",
-          tech: ["MySQL", "Excel"]
+          period: "Agu 2019 - Des 2020",
+          desc: "Fondasi operasi data. Menyederhanakan pipeline Excel-ke-Database dan menetapkan protokol pelaporan standar untuk keunggulan operasional.",
+          tech: ["MySQL", "Excel", "Integrasi Data", "Pelaporan"]
         }
       ]
     },
@@ -169,7 +169,7 @@ export const content = {
   },
   jp: {
     title: "San Rui",
-    role: "オペレーション＆テクノロジー専門家",
+    role: "データエンジニアリング、製品アーキテクチャ、AI主導のイノベーションを融合させるテクニカル・リード",
     location: "インドネシア (WIB)",
     cta: { touch: "お問い合わせ", projects: "プロジェクト" },
     about: {
@@ -184,29 +184,29 @@ export const content = {
           role: "オペレーション・スーパーバイザー",
           company: "Pitjarus Teknologi",
           period: "2025年1月 - 現在",
-          desc: "大規模な配送管理システムプロジェクトのリーダーシップ。システムの最適化、根本原因分析、ステークホルダー管理。",
-          tech: ["SQL", "Power BI", "自動化", "データベース監視"]
+          desc: "大規模な配送管理システム（DMS）の効率化を設計。自動化ソリューションの統合、根本原因の調査、ビジネスニーズと技術実行を結びつけるPRD作成を主導。",
+          tech: ["SQL", "システム最適化", "自動化", "PRD設計", "ステークホルダー管理"]
         },
         {
           role: "キーアカウント・スーパーバイザー",
           company: "Pitjarus Teknologi",
           period: "2022年10月 - 2024年12月",
-          desc: "フィールドオペレーション管理、AI支援開発、クライアントとの戦略的コラボレーション。",
-          tech: ["SQL", "Excel", "Power BI", "Tableau"]
+          desc: "AI支援開発とSQLメンターシップを通じてフィールドフォース業務を拡大。販売データを戦略的ダッシュボードに変換し、主要クライアントとの技術的な架け橋として活動。",
+          tech: ["Python", "Power BI", "SQL開発", "AI支援ツール", "データ分析"]
         },
         {
           role: "専任データサポート",
           company: "Pitjarus Teknologi",
           period: "2020年12月 - 2022年9月",
-          desc: "FMCGセクター向けのデータ検証とレポート作成。複雑なデータ構造の管理。",
-          tech: ["MySQL", "Excel", "データ管理"]
+          desc: "大手FMCGクライアントのデータ整合性を確保。エンドツーendのデータセットアップ、バリデーションワークフロー、高精度なインセンティブ・レポートの作成を管理。",
+          tech: ["MySQL", "Excelマスター", "FMCG分析", "データ検証"]
         },
         {
           role: "データサポート",
           company: "Pitjarus Teknologi",
           period: "2019年8月 - 2020年12月",
-          desc: "データの整合性、インポート/エクスポート、運用レポートの管理。",
-          tech: ["MySQL", "Excel"]
+          desc: "データ業務の基盤構築。Excelからデータベースへのパイプラインを合理化し、業務の卓越性のための標準的なレポートプロトコルを確立。",
+          tech: ["MySQL", "Excel", "データ統合", "レポーティング"]
         }
       ]
     },

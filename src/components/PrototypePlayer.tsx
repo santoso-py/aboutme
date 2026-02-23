@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Layout, Ticket, UserCheck, Settings, 
@@ -16,6 +17,14 @@ type ProjectType = 'cms' | 'dashboard' | 'attendance' | 'bot';
 
 export const PrototypePlayer: React.FC = () => {
   const [activeProject, setActiveProject] = useState<ProjectType | null>(null);
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const projectFromUrl = searchParams.get('project') as ProjectType;
+    if (projectFromUrl) {
+      setActiveProject(projectFromUrl);
+    }
+  }, [searchParams]);
 
   const projects = [
     { id: 'cms' as ProjectType, title: 'Approval Matrix System', sub: 'Logic Wizard' },
